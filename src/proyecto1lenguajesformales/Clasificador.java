@@ -10,19 +10,16 @@ package proyecto1lenguajesformales;
  * @author Mariano
  */
 public class Clasificador {
+    //creamos un constructor para nuestro enum utilizando la clase clasificador
     private Enum enumerador;
     public Clasificador(Enum enumerador) {
         this.enumerador = enumerador;
     }
-
+    //gets and sets
     public Enum getEnumerador() {
         return this.enumerador;
     }
-
     public void setEnumerador(Enum enumerador) {
         this.enumerador = enumerador;
-    }
-    public void imprimirClasificador(){
-        enumerador.getEvaluador();
     }
 }
