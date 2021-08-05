@@ -10,17 +10,12 @@ package proyecto1lenguajesformales;
  * @author Mariano
  */
 public class Proyecto1LenguajesFormales {
-
-    /**
-     * @param args the command line arguments
-     */
+    //llamamos nuestro frame interfaz
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz().setVisible(true);
             }
-        });
-        
+        });    
     }
-    
 }

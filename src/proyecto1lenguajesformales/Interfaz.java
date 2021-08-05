@@ -5,6 +5,8 @@
  */
 package proyecto1lenguajesformales;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mariano
@@ -29,31 +31,35 @@ public class Interfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        ingreso = new javax.swing.JTextField();
+        receptorValoresField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        area = new javax.swing.JTextArea();
+        resultadoTextArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         analizador = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Practica 1 LF");
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ingreso.addActionListener(new java.awt.event.ActionListener() {
+        receptorValoresField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresoActionPerformed(evt);
+                receptorValoresFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 560, 90));
+        jPanel1.add(receptorValoresField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 500, 90));
 
-        area.setColumns(20);
-        area.setRows(5);
-        jScrollPane1.setViewportView(area);
+        resultadoTextArea.setColumns(20);
+        resultadoTextArea.setRows(5);
+        jScrollPane1.setViewportView(resultadoTextArea);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 710, 280));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 750, 280));
 
         jLabel1.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -65,7 +71,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2.setText("Ingreso de valores");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        analizador.setBackground(new java.awt.Color(0, 204, 204));
+        analizador.setBackground(new java.awt.Color(255, 51, 51));
         analizador.setFont(new java.awt.Font("Engravers MT", 1, 12)); // NOI18N
         analizador.setForeground(new java.awt.Color(0, 0, 0));
         analizador.setText("Analizar");
@@ -74,11 +80,23 @@ public class Interfaz extends javax.swing.JFrame {
                 analizadorActionPerformed(evt);
             }
         });
-        jPanel1.add(analizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 130, -1));
+        jPanel1.add(analizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 130, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("©Mariano");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 470, -1, -1));
+        jLabel4.setText("y sea detectado por el programa");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, -1));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("©Mariano");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 470, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Instrucciones, utiliza una coma \",\" ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("o espacio \" \" para finalizar un token ");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,29 +107,36 @@ public class Interfaz extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ingresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoActionPerformed
+    private void receptorValoresFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptorValoresFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresoActionPerformed
+    }//GEN-LAST:event_receptorValoresFieldActionPerformed
 
     private void analizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizadorActionPerformed
-        area.setText("");
-        int tipoDato=4;
+        //creamos variables que nos serviran para el uso dentro de las condicionales
         String queDato;
         String queDatoAnterior;
         String palabra="";
-        Clasificador clasificador = new Clasificador(Enum.valueOf(tipoDato));
-        String receptorTexto=ingreso.getText();
+        String receptorTexto=receptorValoresField.getText();//reestructuramos a una variable el contenido obtenido
         String almacenadorLetra;
+        int tipoDato=4;
+        if(receptorTexto.equals("")){
+            JOptionPane.showMessageDialog(null, "Joven, necesita escribir un dato antes de poder analizar");
+        }else{
+        //creamos un nuevo clasificador utilizando un valor inicial para tomarlo
+        Clasificador clasificador = new Clasificador(Enum.valueOf(tipoDato));
+        resultadoTextArea.setText("");//inicializamos el text area
+        //condicionales, ciclo con el que se repetirá hasta terminar de leer los caracteres que tenemos
         for (int i = 0; i < receptorTexto.length(); i++) {
             queDatoAnterior=clasificador.getEnumerador().getEvaluador();
             almacenadorLetra=receptorTexto.substring(i,i+1);
+            //indicamos valores para cambio en nuestro enum segun el valor que este obtenga con tal caracter
             if(Character.isLetter(receptorTexto.charAt(i))){
                 tipoDato=1;
             }else if(almacenadorLetra.equals(".")){
@@ -123,80 +148,89 @@ public class Interfaz extends javax.swing.JFrame {
             }else if(almacenadorLetra.equals(",")){
                 tipoDato=6;
             }else{
+                /*condicionales de signos con posibilidad a fallar, ahora si esto llega a fallar lo que haremos
+                sera imprimir en que se fallo e ir a por el siguiente dato
+                */
                 if(almacenadorLetra.equals("(")){
                     i++;
                     almacenadorLetra=receptorTexto.substring(i,i+1);
                     tipoDato=4;
                     if(almacenadorLetra.equals(")")){
-                        area.setText(area.getText()+"\nSimbolo: "+"("+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nSimbolo: "+"("+almacenadorLetra);
                     }else{
-                        area.setText(area.getText()+"\nError "+"("+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nError "+"("+almacenadorLetra);
                     }
                 }else if (almacenadorLetra.equals("[")){
                     i++;
                     almacenadorLetra=receptorTexto.substring(i,i+1);
                     tipoDato=4;
                     if(almacenadorLetra.equals("]")){
-                        area.setText(area.getText()+"\nSimbolo: "+"["+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nSimbolo: "+"["+almacenadorLetra);
                     }else{
-                        area.setText(area.getText()+"\nError "+"["+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nError "+"["+almacenadorLetra);
                     }
                 }else if (almacenadorLetra.equals("{")){
                     i++;
                     almacenadorLetra=receptorTexto.substring(i,i+1);
                     tipoDato=4;
                     if(almacenadorLetra.equals("}")){
-                        area.setText(area.getText()+"\nSimbolo: "+"{"+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nSimbolo: "+"{"+almacenadorLetra);
                     }else{
-                        area.setText(area.getText()+"\nError "+"{"+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nError "+"{"+almacenadorLetra);
                     }
                 }else if(almacenadorLetra.equals(";")){
                     tipoDato=4;
-                    area.setText(area.getText()+"\nSimbolo: "+almacenadorLetra);
+                    resultadoTextArea.setText(resultadoTextArea.getText()+"\nSimbolo: "+almacenadorLetra);
                 }
             }
+            /*aqui agarramos nuestro valor de enum para evaluar el contenido que este tiene y si cumple entonces se
+            ejecutara determinada instruccion, ahora bien si esto llega a fallar imprimimos el fallo y reiniciamos
+            la variable palabra para que podamos usarla de nuevo sin necesidad de crear otra
+            cabe destacar que vemos todas las posibilidades de fallos para no perdernos de algo que haga el usuario
+            */
             clasificador.setEnumerador(Enum.valueOf(tipoDato));
             queDato= clasificador.getEnumerador().getEvaluador();
+            //condicional si es letra
             if(queDato.equals("letra")){
                 palabra=palabra+almacenadorLetra;
                 if(Character.isDigit(palabra.charAt(0))){
-                    area.setText(area.getText()+"\nError: "+palabra);
+                    resultadoTextArea.setText(resultadoTextArea.getText()+"\nError: "+palabra);
                     palabra="";
                 }
-            }else if(queDato.equals("punto")){
+            }else if(queDato.equals("punto")){//condicional si es punto
                 if(queDatoAnterior.equals("letra")){
-                    area.setText(area.getText()+"\nError: "+palabra+almacenadorLetra);
+                    resultadoTextArea.setText(resultadoTextArea.getText()+"\nError: "+palabra+almacenadorLetra);
                     palabra="";
                 }else if(queDatoAnterior.equals("numero")){
                     if(palabra.contains(".")){
-                        area.setText(area.getText()+"\nError: "+palabra+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nError: "+palabra+almacenadorLetra);
                         palabra="";
                     }else if(Character.isLetter(palabra.charAt(0))){
-                        area.setText(area.getText()+"\nError: "+palabra+almacenadorLetra);
+                        resultadoTextArea.setText(resultadoTextArea.getText()+"\nError: "+palabra+almacenadorLetra);
                         palabra="";
                     }else{
                         palabra=palabra+almacenadorLetra;
                     }           
                 }
-            }else if(queDato.equals("numero")){
+            }else if(queDato.equals("numero")){//condicional si es numero
                 palabra=palabra+almacenadorLetra;
-            }else if(almacenadorLetra.equals(",")||queDato.equals("espacio")){
+            }else if(almacenadorLetra.equals(",")||queDato.equals("espacio")){//verificamos si es , o espacio para terminar el token
                 if(tipoDato==4){
-                    
+                    //variable con la que no pasará nada porque al ser simbolo es aparte a esto
                 }else{
                     if(palabra.equals("")){  
                 }else{
-                        if(Character.isLetter(palabra.charAt(0))){
-                            area.setText(area.getText()+"\nIdentificador: "+palabra);
+                        if(Character.isLetter(palabra.charAt(0))){//imprimimos token identificador
+                            resultadoTextArea.setText(resultadoTextArea.getText()+"\nIdentificador: "+palabra);
                             palabra="";
                             tipoDato=4;
                         }else if(Character.isDigit(palabra.charAt(0))){
                             if(palabra.contains(".")){
-                                area.setText(area.getText()+"\nDecimal: "+palabra);
+                                resultadoTextArea.setText(resultadoTextArea.getText()+"\nDecimal: "+palabra);//imprimimos token decimal
                             palabra="";
                             tipoDato=4;
                         }else{
-                            area.setText(area.getText()+"\nEntero: "+palabra);
+                            resultadoTextArea.setText(resultadoTextArea.getText()+"\nEntero: "+palabra);//imprimimos token entero
                             palabra="";
                             tipoDato=4;
                         }
@@ -204,6 +238,7 @@ public class Interfaz extends javax.swing.JFrame {
                 }
                 }
             }
+        }
         }
     }//GEN-LAST:event_analizadorActionPerformed
 
@@ -213,12 +248,15 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton analizador;
-    public static javax.swing.JTextArea area;
-    private javax.swing.JTextField ingreso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField receptorValoresField;
+    public static javax.swing.JTextArea resultadoTextArea;
     // End of variables declaration//GEN-END:variables
 }
